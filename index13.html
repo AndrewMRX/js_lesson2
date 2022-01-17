@@ -8,8 +8,21 @@
 </head>
 <body>
   <script>
+    let isValid=false;
+    let years;
+
     alert("Привет");
-    let years = prompt('Сколько вам лет?', 100);
+
+    while (isValid == false) {
+    years = prompt('Сколько вам лет?', 100);
+
+    if (isNaN(years) == false && years != "") {
+     isValid = true;
+     } else {
+       alert("Некорректный ввод, используйте цифры.")
+     }
+    }
+
     alert('Поздравляю! Вам ' + years + ' лет! С праздничком!!!');
     let isAdmin = confirm("Вы - администратор?");
     alert(isAdmin);
