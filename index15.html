@@ -10,6 +10,7 @@
   <script>
 
     let isRepeat = true;
+    let userAge;
 
     while (isRepeat == true) {
 
@@ -17,9 +18,15 @@
     alert('Ваше имя - ' + userName + '. Очень рады знакомству с Вами!!!');
     document.write ('Ваше имя - ' + userName + '. Очень рады знакомству с Вами!!!<br>');
 
-    let userAge = +window.prompt('Сколько Вам лет, если не секрет?', 35);
-    alert('Через 10 лет вам исполнится ' + (userAge + 10) + ' лет!');
-    document.write('Через 10 лет вам исполнится ' + (userAge + 10) + ' лет!<br>');
+    userAge = window.prompt('Сколько Вам лет, если не секрет?', 35);
+
+    if (isNaN(userAge) == true || userAge == "") {
+      alert('Сколько вам исполнится через 10 лет сказать сложно.');
+      document.write('Сколько вам исполнится через 10 лет сказать сложно.<br>');
+      } else {
+        alert('Через 10 лет вам исполнится ' + (+userAge + 10) + ' лет!');
+        document.write('Через 10 лет вам исполнится ' + (+userAge + 10) + ' лет!<br>');
+      }  
 
     isRepeat = confirm("Начать заново?");
     }
